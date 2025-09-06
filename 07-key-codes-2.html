@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Key Codes</title>
+    <style>
+      body {
+        background-color:hsl(from  h s l)
+        ce
+      }
+    </style>
+  </head>
+  <body>
+    <aside>Open debugging console in web browser and press arrow key.</aside>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    
+    <script src="Keycodes.js"></script>
+    <script>
+    window.onload = function ()
+        {
+          var cnavas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.font = "40 Calibri";
+        context.fillStyle = "purple";
+        context.fillText("Hello World!", 350,100);
+        }
+
+     function onKeyboardEvent (event) {
+        switch (event.keyCode) {
+          case Keycode.UP:
+            console.log("Arrow Up!");
+            break;
+          case Keycode.DOWN:
+            console.log("Arrow Down!");
+            break;
+          case Keycode.LEFT:
+            console.log("Arrow Left!");
+            break;
+          case Keycode.RIGHT:
+            console.log("Arrow Right!");
+            break;
+          case Keycode.SPACE: 
+            console.log("Space / Jump!");
+            break;
+
+          // NUMBERS
+          case Keycode.NUM_0: 
+            console.log("Number 0"); 
+            break;
+          case Keycode.NUM_1: 
+            console.log("Number 1");
+            break;
+          case Keycode.NUM_2: 
+            console.log("Number 2"); 
+            break;
+          case Keycode.NUM_3: 
+            console.log("Number 3"); 
+            break;
+          case Keycode.NUM_4: 
+            console.log("Number 4"); 
+            break;
+          case Keycode.NUM_5: 
+            console.log("Number 5"); 
+            break;
+          case Keycode.NUM_6: 
+            console.log("Number 6"); 
+            break;
+          case Keycode.NUM_7: 
+            console.log("Number 7"); 
+            break;
+          case Keycode.NUM_8: 
+            console.log("Number 8"); 
+            break;
+          case Keycode.NUM_9: 
+            console.log("Number 9"); 
+            break;
+
+          // LETTERS
+          
+          case Keycode.LETRA_B: 
+            console.log("Letter B"); 
+            break;
+          case Keycode.LETRA_C: 
+            console.log("Letter C"); 
+            break;
+          case Keycode.LETRA_D: 
+            console.log("Letter D"); 
+            break;
+          case Keycode.LETRA_E: 
+            console.log("Letter E"); 
+            break;
+          case Keycode.LETRA_F: 
+            console.log("Letter F"); 
+            break;
+          case Keycode.LETRA_G: 
+            console.log("Letter G"); 
+            break;
+          case Keycode.LETRA_H: 
+            console.log("Letter H"); 
+            break;
+          case Keycode.LETRA_I: 
+            console.log("Letter I"); 
+            break;
+          case Keycode.LETRA_J: 
+            console.log("Letter J"); 
+            break;
+          case Keycode.LETRA_K: 
+            console.log("Letter K"); 
+            break;
+          case Keycode.LETRA_L: 
+            console.log("Letter L"); 
+            break;
+          case Keycode.LETRA_M: 
+            console.log("Letter M"); 
+            break;
+          case Keycode.LETRA_N: 
+            console.log("Letter N"); 
+            break;
+          case Keycode.LETRA_O: 
+            console.log("Letter O"); 
+            break;
+          case Keycode.LETRA_P: 
+            console.log("Letter P"); 
+            break;
+          case Keycode.LETRA_Q: 
+            console.log("Letter Q"); 
+            break;
+          case Keycode.LETRA_R: 
+            console.log("Letter R"); 
+            break;
+          case Keycode.LETRA_S: 
+            console.log("Letter S"); 
+            break;
+          case Keycode.LETRA_T: 
+            console.log("Letter T"); 
+            break;
+          case Keycode.LETRA_U: 
+            console.log("Letter U"); 
+            break;
+          case Keycode.LETRA_V: 
+            console.log("Letter V"); 
+            break;
+          case Keycode.LETRA_W: 
+            console.log("Letter W"); 
+            break;
+          case Keycode.LETRA_X: 
+            console.log("Letter X"); 
+            break;
+          case Keycode.LETRA_Y: 
+            console.log("Letter Y"); 
+            break;
+          case Keycode.LETRA_Z: 
+            console.log("Letter Z"); 
+            break;
+
+          
+
+          default:
+            console.log("KeyCode: " + event.keyCode);
+        }
+      }
+
+      window.addEventListener('keydown', onKeyboardEvent, false);
+    };
+    </script>
+  </body>
+</html>

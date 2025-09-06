@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RECOMPENSAS</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; 
+        height: 100vh;
+        background: url("Fondo.jpg"); 
+        background-size: cover;
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        font-size: 20px;
+        
+      }
+
+      canvas {
+        border: 2px solid rgba(255, 255, 255, 0.397);
+      }
+
+      #canvas {
+        width: 800px;
+        height: 600px;
+      }
+
+      .instructions {
+        width: 200px;
+        height: 600px;
+        background: rgba(255, 255, 255, 0);
+        border: 2px solid rgba(0, 0, 0, 0);
+        padding: 15px;
+        font-size: 20px;
+        line-height: 2em;
+      }
+
+      .instructions h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- instrucciones izquierda -->
+    <div class="instructions">
+      <h2>MENU DE RECOMPENSAS</h2>
+      <p>1 = Recompensa de Luffy</p>
+      <p>2 = Recompensa de Zoro</p>
+      <p>3 = recompensa de Ussop</p>
+      <p>4 = Recompensa de Robin</p>
+      <p>5 = Recompensa de Chopper</p>
+    </div>
+
+    <!-- canvas principal -->
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <!-- instrucciones derecha -->
+    
+    </div>
+    
+    <script>
+    const Keycode = {
+      NUM_1: 49,
+      NUM_2: 50,
+      NUM_3: 51,
+      NUM_4: 52,
+      NUM_5: 53,
+      SPACE: 32
+    };
+
+    let canvas, context;
+    let currentKey = null;
+    let images = {};
+    let keysPressed = {};
+
+    // El monito ya no se moverá, siempre en el mismo lugar
+    let player = { x: 350, y: 250, size: 400 };
+
+    // Colores posibles del fondo
+    let colors = ["white", "red", "blue"];
+    let currentColorIndex = 0;
+
+    function loadImages() {
+      images["NUM_1"] = new Image();
+      images["NUM_1"].src = "luffy.jpg";
+
+      images["NUM_2"] = new Image();
+      images["NUM_2"].src = "DESCARGA.jpg";
+
+      images["NUM_3"] = new Image();
+      images["NUM_3"].src = "Ussop.png";
+
+      images["NUM_4"] = new Image();
+      images["NUM_4"].src = "nico.jpg";
+
+      images["NUM_5"] = new Image();
+      images["NUM_5"].src = "chopa.jpg";
+    }
+
+    window.onload = function () {
+      canvas = document.getElementById("canvas");
+      context = canvas.getContext("2d");
+      loadImages();
+      gameLoop();
+    };
+
+    function draw() {
+      // Fondo dinámico
+      context.fillStyle = colors[currentColorIndex];
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      if (currentKey) {
+        context.fillStyle = "purple";
+        context.font = "40px Arial";
+        context.fillText(currentKey, player.x, player.y - 10);
+
+        let img = images[currentKey];
+        if (img && img.complete) {
+          let aspect = img.width / img.height;
+          let drawHeight = player.size;
+          let drawWidth = player.size * aspect;
+          let centerX = (canvas.width - drawWidth) / 2;
+          let centerY = (canvas.height - drawHeight) / 2;
+          context.drawImage(img, centerX, centerY, drawWidth, drawHeight);
+        }
+      }
+    }
+
+    function gameLoop() {
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    function onKeyDown(event) {
+
+      if (event.keyCode === Keycode.NUM_1) currentKey = "NUM_1";
+      if (event.keyCode === Keycode.NUM_2) currentKey = "NUM_2";
+      if (event.keyCode === Keycode.NUM_3) currentKey = "NUM_3";
+      if (event.keyCode === Keycode.NUM_4) currentKey = "NUM_4";
+      if (event.keyCode === Keycode.NUM_5) currentKey = "NUM_5";
+
+      keysPressed[event.keyCode] = true;
+    }
+
+    function onKeyUp(event) {
+      keysPressed[event.keyCode] = false;
+    }
+
+    window.addEventListener('keydown', onKeyDown, false);
+    window.addEventListener('keyup', onKeyUp, false);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+var Keycode = {
+    // ARROWS
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
+    SPACE: 32,
+
+    // NUMBERS
+    NUM_0: 48,
+    NUM_1: 49,
+    NUM_2: 50,
+    NUM_3: 51,
+    NUM_4: 52,
+    NUM_5: 53,
+    NUM_6: 54,
+    NUM_7: 55,
+    NUM_8: 56,
+    NUM_9: 57,
+
+    // LETTERS (UPPERCASE)
+    LETRA_A: 65,
+    LETRA_B: 66,
+    LETRA_C: 67,
+    LETRA_D: 68,
+    LETRA_E: 69,
+    LETRA_F: 70,
+    LETRA_G: 71,
+    LETRA_H: 72,
+    LETRA_I: 73,
+    LETRA_J: 74,
+    LETRA_K: 75,
+    LETRA_L: 76,
+    LETRA_M: 77,
+    LETRA_N: 78,
+    LETRA_O: 79,
+    LETRA_P: 80,
+    LETRA_Q: 81,
+    LETRA_R: 82,
+    LETRA_S: 83,
+    LETRA_T: 84,
+    LETRA_U: 85,
+    LETRA_V: 86,
+    LETRA_W: 87,
+    LETRA_X: 88,
+    LETRA_Y: 89,
+    LETRA_Z: 90
+};
